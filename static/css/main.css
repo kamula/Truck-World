@@ -1,0 +1,18 @@
+        /* .container {
+            margin-left: 3px;
+        } */
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: grey;
+            color: white;
+            text-align: center;
+        }
+        
+        .image-thumbnail {
+            height: 200px;
+            object-fit: cover;
+        }
