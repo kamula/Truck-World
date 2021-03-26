@@ -1,6 +1,14 @@
 from django.db import models
 
 class Truck(models.Model):
+    MODEL = (
+        ('Scania','Scania'),
+        ('Mercedes','Mercedes'),
+        ('Volvo','Volvo'),
+        ('DAF','DAF'),
+        ('MAN','MAN'),
+    )
+    model = models.CharField(max_length=20,choices=MODEL)
     name = models.CharField(max_length=100)
     engine = models.CharField(max_length=100)
     clutch = models.CharField(max_length=100)
