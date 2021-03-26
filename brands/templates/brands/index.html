@@ -1,3 +1,4 @@
+{% load static %}
 {% include 'brands/base.html' %}
 {% block content %}
 <body class="m-4">
@@ -12,7 +13,7 @@
                         <li class="list-group-item">Scania</li>
                         <li class="list-group-item">Mercedes</li>
                         <li class="list-group-item">Volvo</li>
-                        <li class="list-group-item">Man</li>
+                        <li class="list-group-item">MAN</li>
                         
                     </ul>
                 </div>
@@ -20,60 +21,21 @@
             <div class="col-md-9">
                 <div class="row">
                     {% comment %} {% for photo in photos %} {% endcomment %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img class="image-thumbnail" src="https://www.super-hobby.com/zdjecia/4/2/8/19917_rd.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="listing-heading text-center">
-                                    <h4 class="text-primary">Scania</h4>
+                    {% for truck  in trucks %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img class="image-thumbnail" src="{{truck.main_photo.url}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="listing-heading text-center">
+                                        <h4 class="text-primary">{{truck.name}}</h4>
+                                    </div>
+                                    <small>category: {{ truck.model }}</small>
                                 </div>
-                                <small>category: {{ photo.category.name }}</small>
+                            <button class="btn btn-primary btn-block">More Info</button>
                             </div>
-                           <button class="btn btn-primary btn-block">View more</button>
-                        </div>
-                    </div>
-                    {% comment %} {% empty %}
-                    <h3>No photos ...</h3>
-                    {% endfor %} {% endcomment %}
-                    {% comment %} image 2 {% endcomment %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img class="image-thumbnail" src="https://i.pinimg.com/736x/e9/96/fa/e996fab651efcf82c38902eaa7611de1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="listing-heading text-center">
-                                    <h4 class="text-primary">Mercedes</h4>
-                                </div>
-                                <small>category: {{ photo.category.name }}</small>
-                            </div>
-                           <button class="btn btn-primary btn-block">View more</button>
-                        </div>
-                    </div>
-                    {% comment %} image3 {% endcomment %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img class="image-thumbnail" src="https://www.super-hobby.com/zdjecia/4/2/8/19917_rd.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="listing-heading text-center">
-                                    <h4 class="text-primary">Scania</h4>
-                                </div>
-                                <small>category: {{ photo.category.name }}</small>
-                            </div>
-                           <button class="btn btn-primary btn-block">View more</button>
-                        </div>
-                    </div>
-                    {% comment %} image 4 {% endcomment %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img class="image-thumbnail" src="https://i.pinimg.com/originals/e8/33/ec/e833ecf6207884db51d1463c960e9e7e.png" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="listing-heading text-center">
-                                    <h4 class="text-primary">Volvo</h4>
-                                </div>
-                                <small>category: {{ photo.category.name }}</small>
-                            </div>
-                           <button class="btn btn-primary btn-block">View more</button>
-                        </div>
-                    </div>
+                        </div>   
+                    {% endfor %}       
+                    
                     
 
 
