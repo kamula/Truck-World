@@ -1,2 +1,11 @@
 venv/
 db.sqlite3
+brands/__pycache__/
+brands/migrations/0001_initial.py
+brands/migrations/0002_auto_20210326_1010.py
+brands/migrations/0003_auto_20210326_1013.py
+brands/migrations/__pycache__/
+static/images/
+trucks/__pycache__/urls.cpython-38.pyc
+trucks/__pycache__/wsgi.cpython-38.pyc
+
